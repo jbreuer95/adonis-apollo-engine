@@ -1,0 +1,28 @@
+{
+  "name": "adonis-apollo-engine",
+  "version": "0.0.1",
+  "description": "Apollo Engine middleware and provider for AdonisJs",
+  "main": "src/ApolloEngine/index.js",
+  "keywords": [
+    "adonis",
+    "adonisjs",
+    "apollo",
+    "engine"
+  ],
+  "author": "Jelle Breuer <jelle@breuclan.nl> (https://boekm.nl)",
+  "license": "MIT",
+  "repository": "github:jbreuer95/adonis-apollo-engine",
+  "bugs": "https://github.com/jbreuer95/adonis-apollo-engine/issues",
+  "homepage": "https://github.com/jbreuer95/adonis-apollo-engine",
+  "dependencies": {
+    "apollo-engine": "^0.9.0-test.2"
+  },
+  "devDependencies": {
+    "standard": "^11.0.0"
+  },
+  "standard": {
+    "globals": [
+      "use"
+    ]
+  }
+}
