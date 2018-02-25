@@ -19,7 +19,7 @@ If you install this package with `npm install` please add a config/apolloEngine.
 
 module.exports = {
   engineConfig: {
-    apiKey: 'service:boekm:tqi8fLS6-IYVPbqa488XXQ'
+    apiKey: 'APOLLO-ENGINE-API-KEY'
   }
 }
 
