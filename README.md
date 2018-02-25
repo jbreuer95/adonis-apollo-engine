@@ -1,9 +1,33 @@
 # Adonis Apollo Engine
 Apollo Engine middleware and provider for AdonisJs
 
+## Important!
+There is a bug in `apollo-server-adonis`, I made a PR for this [see here](https://github.com/apollographql/apollo-server/pull/842), I assume this will be fixed soon.  
+Before then please see the PR and make the change yourself or install the PR's fork.
+
+## Prerequisites
+This package assumes you are using [apollo-server-adonis](https://www.npmjs.com/package/apollo-server-adonis)  
+It might work with [adonis-apollo-server](https://www.npmjs.com/package/adonis-apollo-server) but I haven't tested it
+
+## Installation
+
+Run `adonis install adonis-apollo-engine`, this will install the dependency and create a default config file.
+
+If you install this package with `npm install` please add a config/apolloEngine.js file with the following content:
+```js
+'use strict'
+
+module.exports = {
+  engineConfig: {
+    apiKey: 'service:boekm:tqi8fLS6-IYVPbqa488XXQ'
+  }
+}
+
+```
+
 ## Registering provider
 
-Make sure you register the provider inside `start/app.js` file before making use of the body parser.
+Make sure you register the provider inside the `start/app.js` file before making use of the body parser.
 
 ```js
 const providers = [
@@ -13,7 +37,7 @@ const providers = [
 
 ## Registering middleware
 
-Next step is to register a global middleware which will route the proxy requests. The middleware will be registered inside `start/kernel.js` file.
+Next step is to register a global middleware which will route the proxy requests. The middleware will be registered inside `start/kernel.js` file.  
 Make sure it is the `FIRST` middleware!
 
 ```js
@@ -26,4 +50,13 @@ That's all you need to do 😎
 
 ## Config
 
-The config file `config/apolloEngine.js`  contains all the configuration options you need to configure.
+The config file `config/apolloEngine.js`  contains the minimum to get started.
+
+See https://github.com/apollographql/apollo-engine-js  
+and https://www.apollographql.com/docs/engine/proto-doc.html  
+for available options
+
+## Production
+Using middleware as a proxy, in general, is fine for small to medium projects.  
+For the best performance please run a dedicated docker proxy
+[see here](https://www.apollographql.com/docs/engine/setup-node.html#standalone-docker-container)
