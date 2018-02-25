@@ -1,6 +1,6 @@
 {
   "name": "adonis-apollo-engine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Apollo Engine middleware and provider for AdonisJs",
   "main": "src/ApolloEngine/index.js",
   "keywords": [
