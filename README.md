@@ -2,8 +2,15 @@
 Apollo Engine middleware and provider for AdonisJs
 
 ## Important!
-The proxy that is being created doesn't shut down when you close adonis, I will attempt to fix this in the next version
+When Apollo Engine encounters a SIGUSR2 event (The one that nodemon uses to restart) it dumps a stack trace in the console and doesn't shut down.  
+To get around this issue you have to tell nodemon to use the SIGUSR1 event. You can do this by adding a nodemon.json like this to the root of your project
 
+```
+{
+  "signal": "SIGUSR1"
+}
+```
+Be careful because SIGUSR1 is used for node debugging and could introduce some weird behaviour
 ## Prerequisites
 This package assumes you are using [apollo-server-adonis](https://www.npmjs.com/package/apollo-server-adonis)  
 It might work with [adonis-apollo-server](https://www.npmjs.com/package/adonis-apollo-server) but I haven't tested it
