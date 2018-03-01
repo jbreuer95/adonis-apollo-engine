@@ -2,10 +2,7 @@
 Apollo Engine middleware and provider for AdonisJs
 
 ## Important!
-There is a bug in `apollo-server-adonis`, I made a PR for this [see here](https://github.com/apollographql/apollo-server/pull/842), I assume this will be fixed soon.  
-Before then please see the PR and make the change yourself or install the PR's fork.
-
-Also, the proxy that is being created doesn't shut down when you close adonis, I will attempt to fix this in the next version
+The proxy that is being created doesn't shut down when you close adonis, I will attempt to fix this in the next version
 
 ## Prerequisites
 This package assumes you are using [apollo-server-adonis](https://www.npmjs.com/package/apollo-server-adonis)  
