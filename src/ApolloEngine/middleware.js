@@ -13,8 +13,10 @@ class ApolloEngine {
 
     if (!params.uri || !endpointRegex.test(request.originalUrl())) await next()
     else if (req.method !== 'GET' && req.method !== 'POST') await next()
-    else if (req.headers['x-engine-from'] === params.psk) await next()
-    else {
+    else if (req.headers['x-engine-from'] === params.psk) {
+      response.header('Content-type', 'application/json')
+      await next()
+    } else {
       req.url = this.removeExtraSlash(params.endpoint, request.originalUrl())
       response.implicitEnd = false
       this.proxyRequest(params, req, res, response)
