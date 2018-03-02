@@ -24,13 +24,7 @@ const globalMiddleware = [
 The config file `config/apolloEngine.js`  contains all the configuration options you need to configure.
 
 ## Important!
+When Apollo Engine encounters a SIGUSR2 event (The one that nodemon uses to restart) it dumps a stack trace in the console and shuts down.  
+Because of this you need 2 nodemon restarts before the proxy works again. For now you can use this package in production, but having it on during development is a pain.
 
-When Apollo Engine encounters a SIGUSR2 event (The one that nodemon uses to restart) it dumps a stack trace in the console and doesn't shut down.  
-To get around this issue you have to tell nodemon to use the SIGUSR1 event. You can do this by adding a nodemon.json like this to the root of your project
-
-```
-{
-  "signal": "SIGUSR1"
-}
-```
-Be careful because SIGUSR1 is used for node debugging and could introduce some weird behaviour
+I have an idea how to fix this, please check back at a new version.
