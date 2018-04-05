@@ -15,10 +15,10 @@
   "bugs": "https://github.com/jbreuer95/adonis-apollo-engine/issues",
   "homepage": "https://github.com/jbreuer95/adonis-apollo-engine",
   "dependencies": {
-    "apollo-engine": "^0.9.0-test.2"
+    "apollo-engine": "^1.0.4"
   },
   "devDependencies": {
-    "standard": "^11.0.0"
+    "standard": "^11.0.1"
   },
   "standard": {
     "globals": [
